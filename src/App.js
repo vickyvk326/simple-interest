@@ -1,22 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {useState} from 'react'
 function App() {
+
+  const [simpleIntererst, setSimpleInterest] = useState("Principal amount = Rs. 2000, Rate = 5%, Time = 1 year");
+  const [principal, setPrincipal] = useState(2000);
+  const [rate, setRate] = useState(0.05);
+  const [time, setTime] = useState(1);
+  const calculate=()=>{
+    setSimpleInterest("Rs. "+principal*rate*time)
+  }  
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      {simpleIntererst}
+      <button onClick={calculate}>  Calculate Simple Intererst   </button>
       </header>
     </div>
   );
